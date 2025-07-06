@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.green,
-        tabBarTheme: const TabBarThemeData(
+        tabBarTheme: const TabBarTheme(
           indicatorColor: Colors.white,
         ),
       ),

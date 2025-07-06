@@ -6,7 +6,7 @@ import 'src/app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  LineSDK.instance.setup('1620019587').then((_) {
+  LineSDK.instance.setup('2007470455').then((_) {
     if (kDebugMode) {
       print('LineSDK Prepared');
     }
