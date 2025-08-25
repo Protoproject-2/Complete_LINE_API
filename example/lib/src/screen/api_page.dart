@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 
+import '../message/send_message.dart';
+
 class APIPage extends StatefulWidget {
   const APIPage({Key? key}) : super(key: key);
 
@@ -124,6 +126,21 @@ class _APIPageState extends State<APIPage> {
           _setState(result.data, null);
         } on PlatformException catch (e) {
           _setState(null, e);
+        }
+      }),
+      //  このボタンを押すともう一回ログイン要求されちゃいます。早く治したいね~
+      _APIItem('Send Message', () async {
+        try {
+          final result = await LineSDK.instance.login();
+          final userId = result.userProfile?.userId;
+          if (userId != null) {
+            print("User ID: $userId");
+            sendLineMessage(userId);
+          } else {
+            print("User ID not found");
+          }
+        } on PlatformException catch (e) {
+          print(e.message);
         }
       }),
     ];

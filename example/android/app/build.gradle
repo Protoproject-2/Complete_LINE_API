@@ -35,7 +35,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.linecorp.linesdk.sample"
+        applicationId "com.ryokmt.linesdk.sample"
         minSdk 24
         targetSdk 35
         versionCode flutterVersionCode.toInteger()
